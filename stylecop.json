@@ -1,0 +1,21 @@
+{
+    "$schema": "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/StyleCop.Analyzers/Settings/stylecop.schema.json",
+    "settings": {
+        "namingRules": {
+            "allowedHungarianPrefixes": [
+                "hp",
+                "uv"
+            ]
+        },
+        "layoutRules": {
+            "newlineAtEndOfFile": "require"
+        },
+        "documentationRules": {
+            "xmlHeader": false,
+            "companyName": "Beijing Bytedance Technology Co., Ltd.",
+            "copyrightText": "------------------------------------------------------------------------------\nCopyright (c) 2018-2019 {companyName}\nAll Right Reserved.\nUnauthorized copying of this file, via any medium is strictly prohibited.\nProprietary and confidential.\n------------------------------------------------------------------------------",
+            "documentInternalElements": false,
+            "documentationCulture": "en-US"
+        }
+    }
+}

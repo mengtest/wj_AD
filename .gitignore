@@ -1,0 +1,40 @@
+# ------------------------------------------------------------------------------
+# Copyright (c) 2018-2019 Beijing Bytedance Technology Co., Ltd.
+# All Right Reserved.
+# Unauthorized copying of this file, via any medium is strictly prohibited.
+# Proprietary and confidential.
+# ------------------------------------------------------------------------------
+
+# OS generated
+.DS_Store*
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+[Tt]humbs.db
+[Dd]esktop.ini
+
+# Unity generated
+/[Ll]ibrary/
+/[Ll]ogs/
+/[Oo]bj/
+/[Tt]emp/
+sysinfo.txt
+*.stackdump
+
+# Build generated
+/Build/
+/Assets/StreamingAssets/
+/Assets/StreamingAssets.meta
+
+# Visual Studio / MonoDevelop generated
+/.vs/
+/*.csproj
+/*.sln
+/*.userprefs
+/*.suo
+/*.Cache
+
+# Ignore XLua gen code
+/Assets/XLua/Gen/
+/Assets/XLua/Gen.meta
