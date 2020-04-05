@@ -63,7 +63,7 @@ public sealed class Example : MonoBehaviour {
     public string m_RewardIdIOS = "900546826";
     public string m_RewardIdAndroid = "901121430";
     /// <summary>精准奖励ios,android</summary>
-    public string m_ExpressRewardIdIOS = "945123957";
+    public string m_ExpressRewardIdIOS = "945124051";
     public string m_ExpressRewardIdAndroid = "901121543";
     [Header ("全屏横幅ios,android:")]
     /// <summary>全屏横幅ios,android</summary>
@@ -73,7 +73,7 @@ public sealed class Example : MonoBehaviour {
     public string m_ExpressFullIdIOS = "945123958";
     public string m_ExpressFullIdAndroid = "901121516";
     /// <summary>精准横幅ios,android</summary>
-    public string m_ExpressBannerIdIOS = "945123956";
+    public string m_ExpressBannerIdIOS = "945124050";
     public string m_ExpressBannerIdAndroid = "901121246";
     /// <summary>精准插入式ios,android</summary>
     public string m_ExpressInterstitialIdIOS = "900546270";
@@ -283,6 +283,7 @@ public sealed class Example : MonoBehaviour {
 
     /// <summary>  显示奖励个性  </summary>
     public void ShowExpressRewardAd () {
+        Time.timeScale = 0;
 #if UNITY_IOS
         if (this.expressRewardAd == null) {
             Debug.LogError ("请先加载广告");
@@ -1079,6 +1080,7 @@ public sealed class Example : MonoBehaviour {
         public void OnAdClose () {
             Debug.Log ("rewardVideoAd close");
             this.example.information.text = "rewardVideoAd close";
+            Time.timeScale = 1;
         }
         /// <summary>
         /// ==> 成功看完奖励完毕监听回调，在这里给用户奖励 <==$$$$$$$$$$$$$$$$$$$$$$$$$$$
