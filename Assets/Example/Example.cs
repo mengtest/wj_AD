@@ -63,17 +63,17 @@ public sealed class Example : MonoBehaviour {
     public string m_RewardIdIOS = "900546826";
     public string m_RewardIdAndroid = "901121430";
     /// <summary>精准奖励ios,android</summary>
-    public string m_ExpressRewardIdIOS = "900546566";
+    public string m_ExpressRewardIdIOS = "945123957";
     public string m_ExpressRewardIdAndroid = "901121543";
     [Header ("全屏横幅ios,android:")]
     /// <summary>全屏横幅ios,android</summary>
     public string m_FullIdIOS = "900546299";
     public string m_FullIdAndroid = "901121375";
     /// <summary>精准全屏ios,android</summary>
-    public string m_ExpressFullIdIOS = "900546551";
+    public string m_ExpressFullIdIOS = "945123958";
     public string m_ExpressFullIdAndroid = "901121516";
     /// <summary>精准横幅ios,android</summary>
-    public string m_ExpressBannerIdIOS = "900546269";
+    public string m_ExpressBannerIdIOS = "945123956";
     public string m_ExpressBannerIdAndroid = "901121246";
     /// <summary>精准插入式ios,android</summary>
     public string m_ExpressInterstitialIdIOS = "900546270";
@@ -85,6 +85,7 @@ public sealed class Example : MonoBehaviour {
     #endregion ================================属性==================================
 
     #region ===================================生命周期==================================
+
     private void Start () {
 
         // if (m_IsAutoAD) {
@@ -128,7 +129,8 @@ public sealed class Example : MonoBehaviour {
         compareTime.CompareTimeFun ();
         //if(可点击的次数>0){载入广告}
         if (compareTime.LoadTimes () != 0) {
-            LoadExpressFullScreenVideoAd ();
+            // LoadExpressFullScreenVideoAd ();
+            LoadExpressRewardAd();
         }
         Debug.Log ("剩余次数:" + compareTime.LoadTimes ());
     }
@@ -264,11 +266,11 @@ public sealed class Example : MonoBehaviour {
 #endif
             .SetSupportDeepLink (true)
             .SetImageAcceptedSize (1080, 1920)
-            .SetRewardName ("金币") // 奖励的名称
+            .SetRewardName ("jiangli1") // 奖励的名称
             .SetRewardAmount (3) // 奖励的数量
             .SetUserID ("user123") // 用户id,必传参数
             .SetMediaExtra ("media_extra") // 附加参数，可选
-            .SetOrientation (AdOrientation.Horizontal) // 必填参数，期望视频的播放方向
+            .SetOrientation (AdOrientation.Vertical) // 必填参数，期望视频的播放方向
             .Build ();
 #if UNITY_IOS
         this.AdNative.LoadExpressRewardAd (
@@ -711,6 +713,7 @@ public sealed class Example : MonoBehaviour {
                 new AppDownloadListener (this.example));
 
             this.example.expressRewardAd = ad;
+            this.example.ShowExpressRewardAd ();
 #else
 #endif
         }
