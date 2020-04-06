@@ -52,6 +52,10 @@ public sealed class Example : MonoBehaviour {
     [Header ("是否自动加载广告:")]
     /// <summary>是否自动加载广告</summary>
     public bool m_IsAutoAD = true;
+
+    [Header ("是否横幅广告:")]
+    /// <summary>是否横幅广告</summary>
+    public bool m_IsBanner = false;
     [Header ("--------------------------------------")]
     /// <summary>原生横幅ios,android</summary>
     public string m_NannerIdIOS = "900546687";
@@ -91,9 +95,13 @@ public sealed class Example : MonoBehaviour {
         // if (m_IsAutoAD) {
         // MyLoadAD ();
         // }
+DisposeAds();
 
+        if (m_IsBanner) {
         //加载横幅广告
         LoadExpressBannerAd ();
+        }
+
     }
     #endregion ================================生命周期==================================
 
@@ -130,6 +138,14 @@ public sealed class Example : MonoBehaviour {
         //if(可点击的次数>0){载入广告}
         if (compareTime.LoadTimes () != 0) {
             // LoadExpressFullScreenVideoAd ();
+            
+            DisposeAds();
+
+        if (m_IsBanner) {
+        //加载横幅广告
+        LoadExpressBannerAd ();
+        }
+
             LoadExpressRewardAd();
         }
         Debug.Log ("剩余次数:" + compareTime.LoadTimes ());
@@ -253,7 +269,8 @@ public sealed class Example : MonoBehaviour {
         {
             Debug.LogError ("广告已经加载");
             this.information.text = "广告已经加载";
-            return;
+            // ShowExpressRewardAd();
+            // return;
         }
 
         var adSlot = new AdSlot.Builder ()
@@ -267,7 +284,7 @@ public sealed class Example : MonoBehaviour {
             .SetSupportDeepLink (true)
             .SetImageAcceptedSize (1080, 1920)
             .SetRewardName ("jiangli1") // 奖励的名称
-            .SetRewardAmount (3) // 奖励的数量
+            .SetRewardAmount (1) // 奖励的数量
             .SetUserID ("user123") // 用户id,必传参数
             .SetMediaExtra ("media_extra") // 附加参数，可选
             .SetOrientation (AdOrientation.Vertical) // 必填参数，期望视频的播放方向
